@@ -4,6 +4,7 @@
   "description": "do it bundler",
   "main": "index.js",
   "scripts": {
+    "webpack": ".\\node_modules\\.bin\\webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
