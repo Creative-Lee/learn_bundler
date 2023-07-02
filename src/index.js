@@ -1,3 +1,4 @@
-import * as math from './math.js'
+import * as math from './math.js';
+import './index.css';
 
-console.log(math.sum(1, 2)) // 3
+console.log(math.sum(1, 2)); // 3
