@@ -1,16 +1,19 @@
 /** @type {import('webpack').Configuration} */
 
 const path = require('path');
+const webpack = require('webpack');
+const banner = require('./plugin/banner.js');
 
 module.exports = {
   mode: 'development',
+
   entry: {
     index: './src/index.js',
   },
 
   output: {
     filename: '[name].js',
-    path: path.resolve('./dist'),
+    path: path.resolve(__dirname, 'dist'),
     clean: true, // 이전 출력들을 삭제하고 새로 만들어주세요
   },
 
@@ -38,4 +41,6 @@ module.exports = {
       },
     ],
   },
+
+  plugins: [new webpack.BannerPlugin(banner())],
 };
