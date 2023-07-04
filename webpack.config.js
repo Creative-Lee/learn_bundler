@@ -3,44 +3,80 @@
 const path = require('path');
 const webpack = require('webpack');
 const banner = require('./plugin/banner.js');
+const DobobPlugin = require('./plugin/dobobPlugin.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// module.exports = {
+//   mode: 'production',
+//   devServer: {
+//     port: 3000,
+//     static: './dist',
+//     compress: true,
+//   },
+
+//   entry: {
+//     index: './src/index.js',
+//   },
+
+//   output: {
+//     filename: '[name].js',
+//     path: path.resolve(__dirname, 'dist'),
+//     clean: true, // 이전 출력들을 삭제하고 새로 만들어주세요
+//   },
+
+//   // module: 로더 사용을 위한 객체
+//   module: {
+//     rules: [
+//       {
+//         test: /\.js$/, // 파일명 or 파일 패턴
+//         use: path.resolve('./loader/dobobLoader.js'), //로더 함수 경로(여러개 가능)
+//         exclude: /node_modules/,
+//       },
+//       {
+//         test: /\.css$/,
+//         use: ['style-loader', 'css-loader'], // 로더는 역순으로 실행된다.
+//         exclude: /node_modules/,
+//       },
+//       {
+//         test: /(\.jpg|\.png|\.svg)$/,
+//         type: 'asset', //  8kb 미만은 asset/inline: data uri 형식으로 번들에 포함, 이상은 asset/resource: 별도의 파일로 내보냄 + 경로 설정
+
+//         // generator.filename: 특정 디렉터리에 애셋을 내보낼때 출력 파일명 사용자 정의 - asset, assets/resource 모듈에만 적용가능
+//         generator: {
+//           filename: 'assets/image/[name][hash][ext][query]',
+//         },
+//       },
+//     ],
+//   },
+
+//   plugins: [
+//     new HtmlWebpackPlugin({
+//       minify: {
+//         collapseWhitespace: false,
+//       },
+//     }),
+//     new DobobPlugin(),
+//     new webpack.BannerPlugin(banner()),
+//     new webpack.DefinePlugin({ CUSTOM_VAR: 1 + 1 + 1 }),
+//   ],
+// };
 
 module.exports = {
-  mode: 'development',
-
-  entry: {
-    index: './src/index.js',
-  },
+  entry: './src/index.js',
 
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true, // 이전 출력들을 삭제하고 새로 만들어주세요
+    filename: 'index.js',
+    path: path.resolve(__dirname, './dist'),
   },
 
-  // module: 로더 사용을 위한 객체
   module: {
     rules: [
       {
-        test: /\.js$/, // 파일명 or 파일 패턴
-        use: path.resolve('./loader/dobobLoader.js'), //로더 함수 경로(여러개 가능)
-        exclude: /node_modules/,
-      },
-      {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'], // 로더는 역순으로 실행된다.
-        exclude: /node_modules/,
-      },
-      {
-        test: /(\.jpg|\.png|\.svg)$/,
-        type: 'asset', //  8kb 미만은 asset/inline: data uri 형식으로 번들에 포함, 이상은 asset/resource: 별도의 파일로 내보냄 + 경로 설정
-
-        // generator.filename: 특정 디렉터리에 애셋을 내보낼때 출력 파일명 사용자 정의 - asset, assets/resource 모듈에만 적용가능
-        generator: {
-          filename: 'assets/image/[name][hash][ext][query]',
-        },
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
 
-  plugins: [new webpack.BannerPlugin(banner())],
+  plugins: [new HtmlWebpackPlugin()],
 };
