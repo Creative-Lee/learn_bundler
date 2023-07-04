@@ -4,6 +4,7 @@
   "description": "do it bundler",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "webpack": ".\\node_modules\\.bin\\webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,8 +19,11 @@
   },
   "homepage": "https://github.com/Creative-Lee/learn_bundler#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^5.5.3",
+    "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.88.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
     "css-loader": "^6.8.1",
