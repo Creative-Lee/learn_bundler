@@ -1,4 +1,4 @@
 body {
-  background-image: url('./assets/sad.png');
-  /* background-image: url('./assets/hello.png'); */
+  background-color: black;
+  color: white;
 }

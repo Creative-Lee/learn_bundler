@@ -1,9 +1,3 @@
-const childProcess = require('child_process');
-
 module.exports = function banner() {
-  const commit = childProcess.execSync('git rev-parse --short HEAD');
-  const user = childProcess.execSync('git config user.name');
-  const date = new Date().toLocaleString();
-
-  return `commitVersion: ${commit}` + `Build Date: ${date}\n` + `Author: ${user}`;
+  return '배너는 자동으로 라이센스가 되네';
 };
