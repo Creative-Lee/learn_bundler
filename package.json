@@ -16,13 +16,15 @@
   },
   "homepage": "https://github.com/Creative-Lee/learn_bundler#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^5.5.3",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "html-webpack-plugin": "^5.5.3",
     "css-loader": "^6.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "style-loader": "^3.3.3"
   }
 }
