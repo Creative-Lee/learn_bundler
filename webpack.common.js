@@ -1,3 +1,5 @@
+// webpack.common.js
+
 module.exports = {
   entry: './src/index.tsx',
   module: {
@@ -8,4 +10,7 @@ module.exports = {
       template: './public/index.html',
     }),
   ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
+  },
 };

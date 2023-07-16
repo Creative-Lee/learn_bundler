@@ -1,14 +1,12 @@
-const path = require('path');
+// webpack.dev.js
+
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'development',
-
   devServer: {
+    historyApiFallback: true,
     open: true,
-    port: 'auto', // 수신할 포트
-    static: path.join(__dirname, './dist'),
-    compress: true, // 제공되는 항목에 gzip 압축 적용
   },
 });
