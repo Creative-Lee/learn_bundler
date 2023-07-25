@@ -1,4 +1,5 @@
 // webpack.common.js
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -18,17 +19,5 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
-  },
-};
-
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
-      },
-    ],
   },
 };
