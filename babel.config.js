@@ -1,3 +1,5 @@
+//babel.config.js
+
 module.exports = {
   presets: [
     [
@@ -9,4 +11,5 @@ module.exports = {
     ],
     ['@babel/preset-react'],
   ],
+  plugins: ['react-refresh/babel'],
 };
