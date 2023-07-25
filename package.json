@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "do it bundler",
   "scripts": {
-    "start": "webpack serve --config webpack.common.js"
+    "start": "webpack serve --config webpack.dev.js --progress",
+    "build": "webpack serve --config webpack.prod.js --progress"
   },
   "repository": {
     "type": "git",
